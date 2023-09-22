@@ -1,0 +1,442 @@
+[
+    {
+        "id": "f70104950f35e72c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "737704e9a15696b7",
+        "type": "serial in",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "serial": "b2d0daba796d11ac",
+        "x": 70,
+        "y": 260,
+        "wires": [
+            [
+                "3c8654e1bcfe0667"
+            ]
+        ]
+    },
+    {
+        "id": "3c8654e1bcfe0667",
+        "type": "json",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "dd1f7c68abb9f5cf",
+                "0e49defe10eb8bef",
+                "bb0b6cc45b335344",
+                "176e1fbbfaea471a"
+            ]
+        ]
+    },
+    {
+        "id": "24550fcaad625727",
+        "type": "ui_gauge",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "group": "180ddc2d1db981f6",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "60",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "8a6ccfbc7b95556e",
+        "type": "mqtt out",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "topic": "fiap/iot/1ESR/WorkPass/temperatura",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "da704f07312749c5",
+        "x": 650,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "dd1f7c68abb9f5cf",
+        "type": "change",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 100,
+        "wires": [
+            [
+                "24550fcaad625727",
+                "8a6ccfbc7b95556e"
+            ]
+        ]
+    },
+    {
+        "id": "ff7b3be1bfa961d6",
+        "type": "ui_gauge",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "group": "66cd3637e711fb15",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "34bcdd03d0202f5b",
+        "type": "mqtt out",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "topic": "fiap/iot/1ESR/WorkPass/umidade",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "da704f07312749c5",
+        "x": 640,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "0e49defe10eb8bef",
+        "type": "change",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "ff7b3be1bfa961d6",
+                "34bcdd03d0202f5b"
+            ]
+        ]
+    },
+    {
+        "id": "597cf67b70596de8",
+        "type": "ui_gauge",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "group": "8203dcc9e0a5aee4",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ae5654b46116b683",
+        "type": "mqtt out",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "topic": "fiap/iot/1ESR/WorkPass/fotoresistor",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "da704f07312749c5",
+        "x": 650,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "bb0b6cc45b335344",
+        "type": "change",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.ldr",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 320,
+        "wires": [
+            [
+                "597cf67b70596de8",
+                "ae5654b46116b683"
+            ]
+        ]
+    },
+    {
+        "id": "16fe3d2480938c63",
+        "type": "ui_gauge",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "group": "8104c59ea9164db7",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "2cac4ccf007250cb",
+        "type": "mqtt out",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "topic": "fiap/iot/1ESR/WorkPass/distancia",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "da704f07312749c5",
+        "x": 640,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "176e1fbbfaea471a",
+        "type": "change",
+        "z": "f70104950f35e72c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.distance",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 420,
+        "wires": [
+            [
+                "16fe3d2480938c63",
+                "2cac4ccf007250cb"
+            ]
+        ]
+    },
+    {
+        "id": "b2d0daba796d11ac",
+        "type": "serial-port",
+        "serialport": "COM5",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "180ddc2d1db981f6",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "c48ce5c8aac2cce3",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "da704f07312749c5",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "66cd3637e711fb15",
+        "type": "ui_group",
+        "name": "Úmidade",
+        "tab": "c48ce5c8aac2cce3",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8203dcc9e0a5aee4",
+        "type": "ui_group",
+        "name": "LDR",
+        "tab": "c48ce5c8aac2cce3",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8104c59ea9164db7",
+        "type": "ui_group",
+        "name": "Distância",
+        "tab": "c48ce5c8aac2cce3",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c48ce5c8aac2cce3",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
