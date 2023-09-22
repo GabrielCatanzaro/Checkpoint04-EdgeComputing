@@ -89,14 +89,14 @@ Montagem do hardware:
 
 Configuração e exibição Node-Red:
 
-No Node-RED, você precisará configurar a comunicação com o Arduino e criar um fluxo para exibir os dados dos sensores. Certifique-se de que a extensão "node-red-contrib-arduino" esteja instalada para facilitar a comunicação com o Arduino.
+Configuramos a comunicação com o arduino e criamos um fluxo para exibir os dados dos sensores.
 
 - Adicione um nó "Serial In" para receber os dados do Arduino.
 - Conecte o nó "Serial In" a um nó "Function" para processar os dados.
 - Use o nó "Dashboard" para criar painéis de exibição para os valores do LDR, DHT11 e sensor ultrassônico.
 
-Você pode usar o nó "Function" para separar os dados recebidos da porta serial e enviá-los para os nós de exibição no Dashboard.
+Usamos o nó "Function" para separar os dados recebidos da porta serial e enviá-los para os nós de exibição no Dashboard.
 
-Configure os nós de exibição no Dashboard para mostrar os valores do LDR, DHT11 e sensor ultrassônico de forma clara. Você pode usar nós como "ui_gauge" para valores analógicos e "ui_text" para valores de texto.
+Configuramos os nós de exibição no Dashboard para mostrar os valores do LDR, DHT11 e sensor ultrassônico de forma clara.
 
 
