@@ -62,17 +62,6 @@ void loop() {
   serializeJson(json, Serial);
   Serial.println();
   
-  /*
-  Serial.print("Temperatura: ");
-  Serial.print(temperature);
-  Serial.print(" °C, Umidade: ");
-  Serial.print(humidity);
-  Serial.print("%, LDR: ");
-  Serial.print(ldrValue);
-  Serial.print(", Distância: ");
-  Serial.print(distance);
-  Serial.print(" cm");
-  */
   delay(2000);
 }
 
